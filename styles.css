@@ -1,0 +1,16 @@
+body {
+    background-color: #cddaea;
+}
+
+h1{
+    color: #111111;
+}
+
+.info{
+    color: green;
+    font-weight: bold;
+}
+.error{
+    color: red;
+    font-weight: bold;
+}

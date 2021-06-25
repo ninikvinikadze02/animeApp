@@ -1,0 +1,25 @@
+
+{% extends 'base.html' %}
+{% block title %} Top 25 Anime {% endblock %}
+{% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">სახელი</th>
+      <th scope="col">გამოშვების წელი</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for j in top10 %}
+      <tr>
+      <th scope="row">{{j.id}}</th>
+      <td>{{j.title}}</td>
+      <td>{{j.release_date}}</td>
+      </tr>
+  {% endfor%}
+  </tbody>
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+
+{% extends 'base.html' %}
+{% block title %} Home {% endblock %}
+{% block content %}
+
+    {{ super() }}
+<img src="{{url_for('static',filename='img/ghibli.png')}}">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">სახელი</th>
+      <th scope="col">რეჟისორი</th>
+      <th scope="col">გამოშვების წელი</th>
+      <th scope="col">აღწერა</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for anime in all_anime %}
+      <tr>
+      <th scope="row">{{anime.id}}</th>
+      <td>{{anime.title}}</td>
+      <td>{{anime.director}}</td>
+      <td>{{anime.release_date}}</td>
+        <td>{{anime.description}}</td>
+      </tr>
+  </tbody>
+  {% endfor%}
+</table>
+{% endblock %}

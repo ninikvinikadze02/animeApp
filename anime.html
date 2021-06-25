@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} Anime {% endblock %}
+{% block content %}
+
+    {{ super() }}
+<img src="{{url_for('static',filename='img/anime.jpg')}}" style="margin-left: 350px">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">სახელი</th>
+      <th scope="col">გამოშვების წელი</th>
+      <th scope="col">IMDB შეფასება</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for each in all_anime_georgian %}
+      <tr>
+      <th scope="row">{{each.id}}</th>
+      <td>{{each.title}}</td>
+      <td>{{each.release_date}}</td>
+        <td>{{each.rating}}</td>
+      </tr>
+  </tbody>
+  {% endfor%}
+</table>
+{% endblock %}

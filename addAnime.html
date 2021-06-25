@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %} Search {% endblock %}
+{% block content %}
+
+    {{ super() }}
+    <h5 style="color: #05054b;margin-left: 10px">დაამატეთ ანიმე სტუდიო ghibli-ს ბაზაში</h5>
+    <form method="post" style="width:50%; margin-left: 10px">
+      <div class="form-group">
+        <input type="text" name="title" class="form-control" placeholder="Anime Title"><br>
+        <input type="text" name="director" class="form-control" placeholder="Anime Director"><br>
+          <input type="text" name="release_date" class="form-control"  placeholder="Release year"><br>
+        <input type="text" name="description" class="form-control"  placeholder="Description"><br>
+
+      </div>
+        {% with messages=get_flashed_messages(with_categories=true) %}
+            {% for cat,msg in messages %}
+                <p class="{{cat}}">{{msg}}</p>
+
+            {% endfor %}
+        {% endwith %}
+    <button type="submit" class="btn btn-primary">Add Anime</button>
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
